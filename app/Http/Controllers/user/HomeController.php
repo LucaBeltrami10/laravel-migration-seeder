@@ -8,4 +8,9 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     //
+    public function index()
+    {
+        $ciao = 'mario';
+        return view('pages.home', ['ciao' => $ciao]);
+    }
 }

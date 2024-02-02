@@ -6,5 +6,5 @@ esercizio
 
 
 @section('main-section')
-<p>main</p>
+<p>main{{ $ciao }}</p>
 @endsection
