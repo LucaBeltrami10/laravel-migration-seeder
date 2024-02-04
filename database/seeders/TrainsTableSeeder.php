@@ -65,6 +65,7 @@ class TrainsTableSeeder extends Seeder
             $trainClass->number_of_carriages = $train['number_of_carriages'];
             $trainClass->in_time = $train['in_time'];
             $trainClass->deleted = $train['deleted'];
+            $trainClass->save();
         }
     }
 }
