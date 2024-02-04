@@ -53,19 +53,19 @@ class TrainsTableSeeder extends Seeder
 
         ]; */
 
-        foreach ($trains as $train) {
+        for ($i = 0; $i < 30; $i++) {
             $trainClass = new Train();
 
-            $trainClass->id = $train['id'];
-            $trainClass->company = $train['company'];
-            $trainClass->departure_station = $train['departure_station'];
-            $trainClass->arrival_station = $train['arrival_station'];
-            $trainClass->departure_time = $train['departure_time'];
-            $trainClass->arrival_time = $train['arrival_time'];
-            $trainClass->train_code = $train['train_code'];
-            $trainClass->number_of_carriages = $train['number_of_carriages'];
-            $trainClass->in_time = $train['in_time'];
-            $trainClass->deleted = $train['deleted'];
+            $trainClass->id = $faker->numberBetween($min = 6, $max = 1000);
+            $trainClass->company = $faker->word($nb = 5);
+            $trainClass->departure_station = $faker->word($nb = 7);
+            $trainClass->arrival_station = $faker->word($nb = 8);
+            $trainClass->departure_time = $faker->time();
+            $trainClass->arrival_time = $faker->time();
+            $trainClass->train_code = $faker->randomNumber($nbDigits = 5);
+            $trainClass->number_of_carriages = $faker->randomDigit;
+            $trainClass->in_time = $faker->boolean;
+            $trainClass->deleted = $faker->boolean;
             $trainClass->save();
         }
     }
