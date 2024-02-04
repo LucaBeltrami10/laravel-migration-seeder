@@ -14,7 +14,7 @@ class TrainsTableSeeder extends Seeder
     {
         $trains = [
             [
-                'id' => 1,
+                'id' => 4,
                 'company' => 'trenitalia',
                 'departure_station' => 'bologna',
                 'arrival_station' => 'bari',
@@ -26,7 +26,7 @@ class TrainsTableSeeder extends Seeder
                 'deleted' => 0,
             ],
             [
-                'id' => 1,
+                'id' => 5,
                 'company' => 'trenitalia',
                 'departure_station' => 'mantova',
                 'arrival_station' => 'livorno',
@@ -38,7 +38,7 @@ class TrainsTableSeeder extends Seeder
                 'deleted' => 0,
             ],
             [
-                'id' => 1,
+                'id' => 6,
                 'company' => 'trenitalia',
                 'departure_station' => 'terni',
                 'arrival_station' => 'salerno',
@@ -52,8 +52,19 @@ class TrainsTableSeeder extends Seeder
 
         ];
 
-        foreach ($trains as $treno) {
-            $TrainClass = new Train();
+        foreach ($trains as $train) {
+            $trainClass = new Train();
+
+            $trainClass->id = $train['id'];
+            $trainClass->company = $train['company'];
+            $trainClass->departure_station = $train['departure_station'];
+            $trainClass->arrival_station = $train['arrival_station'];
+            $trainClass->departure_time = $train['departure_time'];
+            $trainClass->arrival_time = $train['arrival_time'];
+            $trainClass->train_code = $train['train_code'];
+            $trainClass->number_of_carriages = $train['number_of_carriages'];
+            $trainClass->in_time = $train['in_time'];
+            $trainClass->deleted = $train['deleted'];
         }
     }
 }
